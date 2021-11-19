@@ -1,0 +1,11 @@
+Package: gbmwrap
+Type: Package
+Title: Wraps GBM Selection And Fitting
+Version: 0.1.0
+Author: Wesley Brooks
+Maintainer: Wesley Brooks <wbrooks@ucdavis.edu>
+Description: Provides a function that wraps calls to GBM for feature selection and model estimation.
+License: MIT License
+Encoding: UTF-8
+LazyData: true
+Depends: gbm
