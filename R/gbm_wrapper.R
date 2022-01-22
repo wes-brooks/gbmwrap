@@ -17,7 +17,7 @@ gbm_wrapper = function( target, data, n.trees=5000, shrinkage=0.0025, interactio
 
   ## get the top predictors
   sorted_vars = summary( screening_model, n.trees=ntree_screen, plotit=FALSE )$var
-  k = max( length(sorted_vars), floor( nrow(data) / 20 ))
+  k = min( length(sorted_vars), floor( nrow(data) / 20 ))
   f2 = formula(paste0( target, "~", paste(sorted_vars[seq_len(k)], collapse='+')))
 
 
