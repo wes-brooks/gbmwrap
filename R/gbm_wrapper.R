@@ -1,4 +1,18 @@
-# function to fit a gbm model
+#' Function to fit a gbm model
+#'
+#' This wraps up my most common options when building a gradient boosted random forest model with GBM
+#'
+#' @param target name of the column that is being predicted
+#' @param data `data.frame` of predictors and the response variable
+#' @param n.trees how many trees in the random forest
+#' @param shrinkage learning rate
+#' @param interaction.depth how many branches per tree
+#' @param distribution statistical distribution of the response variable
+#'
+#' @return a fitted GBM model
+#'
+#' @importFrom gbm gbm gbm.perf
+#' @export
 gbm_wrapper = function( target, data, n.trees=5000, shrinkage=0.0025, interaction.depth=5, distribution ="gaussian", ... ) {
   # drop rows with NAs
   data = data[ complete.cases(data), ]
